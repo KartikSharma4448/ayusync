@@ -9,6 +9,7 @@ import Login from "@/pages/login";
 import Dashboard from "@/pages/dashboard";
 import Upload from "@/pages/upload";
 import Dispatcher from "@/pages/dispatcher";
+import ViewProfile from "@/pages/view-profile";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -18,6 +19,7 @@ function Router() {
       <Route path="/dashboard" component={Dashboard} />
       <Route path="/upload" component={Upload} />
       <Route path="/dispatcher" component={Dispatcher} />
+      <Route path="/view/:abhaId" component={ViewProfile} />
       <Route component={NotFound} />
     </Switch>
   );

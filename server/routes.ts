@@ -109,6 +109,19 @@ export async function registerRoutes(
     }
   });
 
+  app.get("/api/patients/abha/:abhaId", async (req, res) => {
+    try {
+      const patient = await storage.getPatientByAbhaId(req.params.abhaId);
+      if (!patient) {
+        return res.status(404).json({ error: "Patient not found" });
+      }
+      res.json(patient);
+    } catch (error) {
+      console.error("Get patient by ABHA error:", error);
+      res.status(500).json({ error: "Failed to get patient" });
+    }
+  });
+
   app.get("/api/patients/:id", async (req, res) => {
     try {
       const patient = await storage.getPatient(req.params.id);

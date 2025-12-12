@@ -64,6 +64,7 @@ export class MemStorage implements IStorage {
   }
 
   private seedData() {
+    // Jaipur Patients
     const patients: Patient[] = [
       {
         id: "p1",
@@ -73,7 +74,7 @@ export class MemStorage implements IStorage {
         email: "rahul.sharma@email.com",
         dateOfBirth: "1985-03-15",
         bloodGroup: "B+",
-        address: "123 MG Road, New Delhi",
+        address: "C-12, Malviya Nagar, Jaipur",
         emergencyContact: "+91 98765 43211",
       },
       {
@@ -84,7 +85,7 @@ export class MemStorage implements IStorage {
         email: "priya.patel@email.com",
         dateOfBirth: "1990-07-22",
         bloodGroup: "O+",
-        address: "456 Park Street, Mumbai",
+        address: "A-45, Vaishali Nagar, Jaipur",
         emergencyContact: "+91 87654 32110",
       },
       {
@@ -95,7 +96,7 @@ export class MemStorage implements IStorage {
         email: "amit.kumar@email.com",
         dateOfBirth: "1978-11-08",
         bloodGroup: "A-",
-        address: "789 Lake View, Bangalore",
+        address: "D-78, Raja Park, Jaipur",
         emergencyContact: "+91 76543 21099",
       },
       {
@@ -106,7 +107,7 @@ export class MemStorage implements IStorage {
         email: "sunita.reddy@email.com",
         dateOfBirth: "1995-01-30",
         bloodGroup: "AB+",
-        address: "321 Hill Road, Hyderabad",
+        address: "B-23, Mansarovar, Jaipur",
         emergencyContact: "+91 65432 10988",
       },
       {
@@ -117,7 +118,7 @@ export class MemStorage implements IStorage {
         email: "vikram.singh@email.com",
         dateOfBirth: "1982-09-12",
         bloodGroup: "O-",
-        address: "654 River Side, Chennai",
+        address: "E-56, C-Scheme, Jaipur",
         emergencyContact: "+91 54321 09877",
       },
     ];
@@ -184,105 +185,120 @@ export class MemStorage implements IStorage {
 
     records.forEach((r) => this.medicalRecords.set(r.id, r));
 
+    // Jaipur Hospitals
     const hospitals: Hospital[] = [
       {
         id: "h1",
-        name: "Apollo Hospital",
-        address: "Sarita Vihar, New Delhi",
-        phone: "+91 11 2692 5801",
-        latitude: 28.5355,
-        longitude: 77.2610,
-        bedsAvailable: "150",
-        specialties: "Cardiology, Neurology, Oncology",
+        name: "Sawai Man Singh Hospital",
+        address: "JLN Marg, Jaipur",
+        phone: "+91 141 251 8888",
+        latitude: 26.8947,
+        longitude: 75.8062,
+        bedsAvailable: "1500",
+        specialties: "Multi-specialty, Trauma, Emergency",
       },
       {
         id: "h2",
-        name: "AIIMS",
-        address: "Ansari Nagar, New Delhi",
-        phone: "+91 11 2658 8500",
-        latitude: 28.5672,
-        longitude: 77.2100,
-        bedsAvailable: "500",
-        specialties: "Multi-specialty, Research, Trauma",
+        name: "Fortis Escorts Hospital",
+        address: "Malviya Nagar, Jaipur",
+        phone: "+91 141 254 7000",
+        latitude: 26.8582,
+        longitude: 75.8012,
+        bedsAvailable: "300",
+        specialties: "Cardiology, Neurology, Orthopedics",
       },
       {
         id: "h3",
-        name: "Max Super Specialty",
-        address: "Saket, New Delhi",
-        phone: "+91 11 2651 5050",
-        latitude: 28.5289,
-        longitude: 77.2161,
+        name: "Narayana Multispeciality Hospital",
+        address: "Sector 28, Kumbha Marg, Jaipur",
+        phone: "+91 141 712 8888",
+        latitude: 26.8515,
+        longitude: 75.8108,
         bedsAvailable: "200",
-        specialties: "Cardiac Surgery, Orthopedics, Pediatrics",
+        specialties: "Cardiac Surgery, Oncology, Nephrology",
       },
       {
         id: "h4",
-        name: "Fortis Hospital",
-        address: "Vasant Kunj, New Delhi",
-        phone: "+91 11 4277 6222",
-        latitude: 28.5485,
-        longitude: 77.1565,
-        bedsAvailable: "180",
-        specialties: "Liver Transplant, Kidney Care, Cancer",
+        name: "Manipal Hospital",
+        address: "Sector 5, Vidhyadhar Nagar, Jaipur",
+        phone: "+91 141 303 0303",
+        latitude: 26.9520,
+        longitude: 75.7780,
+        bedsAvailable: "250",
+        specialties: "Emergency, Pediatrics, Gastroenterology",
+      },
+      {
+        id: "h5",
+        name: "RUHS Hospital",
+        address: "Kumbha Marg, Pratap Nagar, Jaipur",
+        phone: "+91 141 279 5600",
+        latitude: 26.8449,
+        longitude: 75.7869,
+        bedsAvailable: "800",
+        specialties: "Government Hospital, All Specialties",
       },
     ];
 
     hospitals.forEach((h) => this.hospitals.set(h.id, h));
 
+    // Jaipur Ambulances - spread across city
     const ambulances: Ambulance[] = [
       {
         id: "a1",
-        vehicleNumber: "DL-01-AM-1234",
+        vehicleNumber: "RJ-14-AM-1234",
         driverName: "Rajesh Kumar",
         driverPhone: "+91 98111 22334",
         status: "available",
-        latitude: 28.6129,
-        longitude: 77.2295,
+        latitude: 26.9124,
+        longitude: 75.7873,
         hospitalId: "h1",
       },
       {
         id: "a2",
-        vehicleNumber: "DL-02-AM-5678",
+        vehicleNumber: "RJ-14-AM-5678",
         driverName: "Suresh Yadav",
         driverPhone: "+91 98222 33445",
         status: "available",
-        latitude: 28.5921,
-        longitude: 77.1940,
+        latitude: 26.8820,
+        longitude: 75.7590,
         hospitalId: "h2",
       },
       {
         id: "a3",
-        vehicleNumber: "DL-03-AM-9012",
+        vehicleNumber: "RJ-14-AM-9012",
         driverName: "Mohammed Ali",
         driverPhone: "+91 98333 44556",
         status: "available",
-        latitude: 28.6350,
-        longitude: 77.2250,
+        latitude: 26.8650,
+        longitude: 75.8150,
         hospitalId: "h3",
       },
       {
         id: "a4",
-        vehicleNumber: "DL-04-AM-3456",
+        vehicleNumber: "RJ-14-AM-3456",
         driverName: "Vikram Chauhan",
         driverPhone: "+91 98444 55667",
         status: "busy",
-        latitude: 28.5550,
-        longitude: 77.1850,
+        latitude: 26.9350,
+        longitude: 75.7720,
         hospitalId: "h4",
       },
       {
         id: "a5",
-        vehicleNumber: "DL-05-AM-7890",
+        vehicleNumber: "RJ-14-AM-7890",
         driverName: "Arun Sharma",
         driverPhone: "+91 98555 66778",
         status: "available",
-        latitude: 28.5800,
-        longitude: 77.2350,
-        hospitalId: "h1",
+        latitude: 26.8780,
+        longitude: 75.8250,
+        hospitalId: "h5",
       },
     ];
 
     ambulances.forEach((a) => this.ambulances.set(a.id, a));
+    
+    // Start ambulance movement simulation
+    this.startAmbulanceSimulation();
   }
 
   async getUser(id: string): Promise<User | undefined> {
@@ -419,6 +435,34 @@ export class MemStorage implements IStorage {
     const updated = { ...session, verified: true };
     this.otpSessions.set(id, updated);
     return updated;
+  }
+
+  // Simulate ambulance movement around Jaipur
+  private startAmbulanceSimulation() {
+    setInterval(() => {
+      this.ambulances.forEach((ambulance, id) => {
+        // Only move available ambulances
+        if (ambulance.status === "available") {
+          // Small random movement (about 100-200 meters)
+          const latChange = (Math.random() - 0.5) * 0.002;
+          const lonChange = (Math.random() - 0.5) * 0.002;
+          
+          // Keep within Jaipur bounds (roughly 26.8 to 27.0 lat, 75.7 to 75.9 lon)
+          let newLat = ambulance.latitude + latChange;
+          let newLon = ambulance.longitude + lonChange;
+          
+          // Clamp to Jaipur area
+          newLat = Math.max(26.82, Math.min(26.98, newLat));
+          newLon = Math.max(75.72, Math.min(75.88, newLon));
+          
+          this.ambulances.set(id, {
+            ...ambulance,
+            latitude: newLat,
+            longitude: newLon,
+          });
+        }
+      });
+    }, 3000); // Update every 3 seconds
   }
 }
 
