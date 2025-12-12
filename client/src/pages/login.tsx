@@ -68,8 +68,8 @@ export default function Login() {
 
   const handleAbhaSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (abhaId.length >= 10) {
-      requestOtpMutation.mutate(abhaId);
+    if (abhaId.trim().length >= 6) {
+      requestOtpMutation.mutate(abhaId.trim());
     }
   };
 
